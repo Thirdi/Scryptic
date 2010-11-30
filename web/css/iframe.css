@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* a lite version of css used for iframes, styles can be added/redefined if needed */
+
+/* base set up */
+body {margin: 0; padding: 0; background: #fff; font: 11px Arial, Helvetica, sans-serif;}
+form {margin: 0; padding: 0;}
+img {border: 0;}
+input {margin: 0; outline: none;}
+a, a:visited {color: #00447b; text-decoration: none; outline: none;}
+a:hover {text-decoration: underline;}
+td, th {text-align: left; vertical-align: top;}
+th {color: #999; text-transform: uppercase;}
+
+h2 {font-size: 16px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;}
+h3 {margin: 0; font-size: 13px; color: #666;}
+
+
+/* form layout 
+------------------------------------------------------ */
+.form_error {color: #c00;}
+.form-input {height: 40px; clear: left;}
+.form-input label {width: 150px; margin-right: 10px; padding-top: 3px; text-align: right; float: left;}
+.form-input input {float: left;}
+.form-submit {margin: 20px 20px 10px 160px; clear: left;}
+
+.infotext {margin-left: 5px; font-style: italic; color: #666;}

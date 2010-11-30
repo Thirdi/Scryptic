@@ -1,0 +1,127 @@
+# default rules
+learnmore:
+  url: /learnmore
+  param: { module: static, action: dispatch, page: learnMore }
+
+aboutpage:
+  url: /about
+  param: { module: static, action: dispatch, page: about }
+
+faq:
+  url: /faq
+  param: { module: static, action: dispatch, page: faq }
+  
+configpage:
+  url: /config
+  param: { module: printconfiguration, action: edit }
+  
+contactpage:
+  url: /contact
+  param: { module: static, action: dispatch, page: contact }
+  
+homepage:
+  url:   /
+  param: { module: home, action: index }
+  
+printpage:
+  url: /print
+  param: { module: print, action: index }
+
+printreport:
+  url: /print/report
+  param: { module: print, action: report }
+  
+print_cleanup:
+  url: /print/cleanup
+  param: { module: print, action: delete }
+
+privacypage:
+  url: /privacy
+  param: { module: static, action: dispatch, page: privacy }  
+
+signuppage:
+  url: /signup
+  param: { module: user, action: signup }
+  
+statspage:
+  url: /stats
+  param: { module: stat, action: index }
+
+termspage:
+  url: /terms
+  param: { module: static, action: dispatch, page: terms }
+  
+userspage:
+  url: /users
+  param: { module: user, action: index }
+
+myaccount:
+  url: /myaccount
+  param: { module: user, action: myAccount }
+
+force_password_change:
+  url: /first-time-password-change
+  param: { module: user, action: forcePasswordChange }
+   
+# authentication module
+sf_guard_signin:
+  url:   /signin
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /signout
+  param: { module: sfGuardAuth, action: signout }
+
+sf_guard_password:
+  url:   /request-password
+  param: { module: sfGuardAuth, action: requestPassword }
+
+sf_guard_password_sent:
+  url:   /password-sent
+  param: { module: sfGuardAuth, action: passwordSent }
+
+# file module
+delete_file:
+  url: /file/delete/:id
+  param: {module: file, action: delete}
+  
+# watermark module
+delete_watermark_group:
+  url: /watermark/group/delete/:id
+  param: { module: watermark, action: deleteGroup}
+
+delete_watermark_group_item:
+  url: /watermark/group/item/delete/:id
+  param: { module: watermark, action: deleteGroupItem}
+  
+display_watermark_group_items:
+  url: /watermark/group/items/display/:id
+  param: { module: watermark, action: displayGroupItems}
+
+edit_watermark_group:
+  url: /watermark/group/edit/:id
+  param: { module: watermark, action: editGroup}
+
+edit_watermark_group_item:
+  url: /watermark/group/item/edit/:id
+  param: { module: watermark, action: editGroupItem}
+  
+update_watermark_group:
+  url: /watermark/group/update/:id
+  param: { module: watermark, action: updateGroup}
+  
+update_watermark_group_item:
+  url: /watermark/group/item/update/:id
+  param: { module: watermark, action: updateGroupItem}
+
+# default symfony routing
+default_symfony:
+  url:   /symfony/:action/*
+  param: { module: default }
+
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

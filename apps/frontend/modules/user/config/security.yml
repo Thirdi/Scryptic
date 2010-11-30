@@ -1,0 +1,17 @@
+index:
+  is_secure: true
+add:
+  is_secure: true
+edit:
+  is_secure: true
+  credentials: [ administrator ]
+delete:
+  is_secure: true
+update:
+  is_secure: true
+myAccount:
+  is_secure: true
+forcePasswordChange:
+  is_secure: true
+default:
+  is_secure: false

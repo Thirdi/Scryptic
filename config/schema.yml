@@ -1,0 +1,134 @@
+propel:
+  account:
+    _attributes:      { phpName: Account, package: lib.model, idMethod: native }
+    id:
+    created_at:
+    deleted_at:       { type: timestamp }
+    status:           { type: integer, required: true, default: 1 }
+    updated_at:       { type: timestamp }
+
+  activation_code:
+    _attributes:      { phpName: ActivationCode, package: lib.model, idMethod: native }
+    id:
+    code:             { type: varchar, size: 128 }
+    created_at:
+    verified_at:      { type: timestamp }
+    account_id:          { type: integer, required: true, foreignTable: account, foreignReference: id }
+
+  configuration:
+    _attributes:         { phpName: Configuration, package: lib.model, idMethod: native }
+    id:
+    title:               { type: varchar, size: 64 }
+    configuration_key:   { type: varchar, size: 64 }
+    configuration_value: { type: longvarchar }
+    description:         { type: longvarchar }
+    created_at:
+    updated_at:
+
+  file:
+    _attributes:      { phpName: File, package: lib.model, idMethod: native }
+    id:
+    user_id:          { type: integer, required: true, foreignTable: sf_guard_user_profile, foreignReference: id }
+    name:             { type: varchar, required: true, size: 128 }
+    file_hash:        { type: varchar, required: true, size: 128 }
+    size:             { type: integer, required: true }
+    pages:            { type: integer, required: true }
+    created_at:
+    deleted_at:       { type: timestamp }
+    content_type:     { type: varchar, size: 256, required: true }
+
+  font:
+    _attributes:      { phpName: Font, package: lib.model, idMethod: native }
+    id:
+    name:             { type: varchar, required: true, size: 128 }
+    file_name:        { type: varchar, required: true, size: 128 }
+
+  layout:
+    _attributes:      { phpName: Layout, package: lib.model, idMethod: native }
+    id:
+    name:             { type: varchar, required: true, size: 32 }
+    image:            { type: varchar, required: true, size: 64 }
+    php_obj:          { type: varchar, required: true, size: 128 }
+
+  print_configuration:
+    _attributes:      { phpName: PrintConfiguration, package: lib.model, idMethod: native }
+    id:
+    account_id:       { type: integer, required: true, foreignTable: account, foreignReference: id }
+    layout_id:        { type: integer, foreignTable: layout, foreignReference: id }
+    watermark_image_id: { type: integer, required: true, foreignTable: watermark_image, foreignReference: id }
+    font_id:          { type: integer, required: true, foreignTable: font, foreignReference: id, default: 1}
+    size:             { type: integer, required: true, default: 16 }
+    colour:           { type: varchar, required: true, default: 000000, size: 16 }
+    opacity:          { type: integer, required: true, default: 50 }
+    created_at:
+
+  print_history_configuration:
+    _attributes:      { phpName: PrintHistoryConfiguration, package: lib.model, idMethod: native }
+    id:
+    layout_id:        { type: integer, foreignTable: layout, foreignReference: id }
+    font_id:          { type: integer, required: true, foreignTable: font, foreignReference: id, default: 1}
+    size:             { type: integer, required: true, default: 16 }
+    colour:           { type: varchar, required: true, default: 000000, size: 16 }
+    opacity:          { type: integer, required: true, default: 50 }
+    print_history_id: { type: integer, required: true, foreignTable: print_history, foreignReference: id }
+
+  print_history:
+    _attributes:      { phpName: PrintHistory, package: lib.model, idMethod: native }
+    id:
+    user_id:          { type: integer, required: true, foreignTable: sf_guard_user_profile, foreignReference: id }
+    user_ip:		  { type: varchar, required: true, size: 32 }
+    file_id:          { type: integer, required: true, foreignTable: file, foreignReference: id }
+    size:             { type: integer, required: true }
+    num_documents:    { type: integer, required: true }
+    pages:            { type: integer, required: true }
+    creation_time:    { type: integer, required: true }
+    total_time:       { type: integer, required: true }
+    created_at:
+
+  print_history_group:
+    _attributes:      { phpName: PrintHistoryGroup, package: lib.model, idMethod: native }
+    id:
+    print_history_id: { type: integer, required: true, foreignTable: print_history, foreignReference: id }
+    name:             { type: varchar, required: true, size: 64 }
+
+  print_history_group_item:
+    _attributes:      { phpName: PrintHistoryGroupItem, package: lib.model, idMethod: native }
+    id:
+    print_history_group_id: { type: integer, required: true, foreignTable: print_history_group, foreignReference: id }
+    value:            { type: varchar, required: true, size: 128 }
+
+  sf_guard_user_profile:
+    _attributes:      { phpName: sfGuardUserProfile, package: lib.model, idMethod: native }
+    id:
+    account_id:       { type: integer, required: true, foreignTable: account, foreignReference: id }
+    first_name:       { type: varchar, size: 64, required: true }
+    last_name:        { type: varchar, size: 64, required: true }
+    user_id:          { type: integer, required: true, foreignTable: sf_guard_user, foreignReference: id }
+    is_deleted:       { type: integer }
+    force_password_change: { type: integer, required: true, default: 0 }
+
+  wm_group:
+    _attributes:      { phpName: WMGroup, package: lib.model, idMethod: native }
+    id:
+    account_id:       { type: integer, required: true, foreignTable: account, foreignReference: id }
+    name:             { type: varchar, required: true, size: 64 }
+    created_at:
+
+  wm_group_item:
+    _attributes:      { phpName: WMGroupItem, package: lib.model, idMethod: native }
+    id:
+    wm_group_id:      { type: integer, required: true, foreignTable: wm_group, foreignReference: id }
+    value:            { type: varchar, required: true, size: 128 }
+    alt_value:        { type: varchar, required: false, size: 128 }
+    created_at:
+
+  watermark_image:
+    _attributes:      { phpName: WatermarkImage, package: lib.model, idMethod: native }
+    id:
+    account_id:       { type: integer, required: true, foreignTable: account, foreignReference: id }
+    image_name:       { type: varchar, required: true, size: 64 }
+    content_type:     { type: varchar, required: true, size: 32 }
+    is_deleted:       { type: integer, required: true }
+    width:            { type: integer, required: true, default: 0 }
+    height:           { type: integer, required: true, default: 0 }
+

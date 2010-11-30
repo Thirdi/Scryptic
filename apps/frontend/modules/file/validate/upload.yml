@@ -1,0 +1,28 @@
+methods:
+  post: [file]
+
+names:
+  file:
+    required:         true
+    required_msg:     Please select a file
+    validators:       [fileValidator]
+    file: true
+
+fileValidator:
+    class:            myFileValidator
+    param:
+      mime_types:       
+        - 'application/pdf'
+        - 'application/msword' 
+        - 'application/vnd.ms-excel'
+        - 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' 
+        - 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        - 'application/octet-stream'
+        - 'application/x-zip-compressed'
+        - 'image/jpeg'
+        - 'image/pjpeg'
+        - 'image/gif'
+        - 'image/png'
+        - 'image/x-png'
+      mime_types_error: Only PDF, DOC, XLS, JPG, GIF, PNG files are allowed
+    

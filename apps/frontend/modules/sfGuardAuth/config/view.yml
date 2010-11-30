@@ -1,0 +1,7 @@
+default:
+  layout: home_layout
+
+requestPasswordSuccess:
+  metas:
+    title: Request New Password
+    robots: noindex

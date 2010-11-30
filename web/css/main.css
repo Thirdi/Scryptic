@@ -1,0 +1,342 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* base set up */
+body {margin: 0; padding: 0; background: #eef9fb; font: 11px Arial, Helvetica, sans-serif;}
+form {margin: 0; padding: 0;}
+img {border: 0;}
+input {margin: 0; outline: none;}
+a, a:visited {color: #00447b; text-decoration: none; outline: none;}
+a:hover {text-decoration: underline;}
+td, th {text-align: left; vertical-align: top;}
+th {color: #999; text-transform: uppercase;}
+
+h2 {font-size: 16px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;}
+h3 {margin: 0; font-size: 13px; color: #666;}
+
+blockquote {margin: 15px 20px; font-size: 16px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;}
+
+
+/* ------------------------------------------------------
+   maincontainer styles - homepage, static pages, sign up form etc
+------------------------------------------------------ */
+#maincontainer {width: 768px; margin: 30px auto 0;}
+#header, #footer {width: 760px; padding: 0 4px;}
+
+#header {height: 200px; background: url(../images/bg-header.jpg) top left no-repeat; position: relative;}
+.logo {margin: 0; padding: 29px 0 0 11px;}
+.logo a {width: 141px; height: 163px; display: block; background: url(../images/logo-scryptic.jpg) top left no-repeat; text-indent: -9999px; outline: none;}
+.login {text-align: right; position: absolute; top: 15px; right: 19px;}
+.login input {width: 150px; margin-bottom: 3px;}
+.login input.basebtn {width: 86px;} /* 86px wide instead 85 displays the sha*/
+
+#myaccount {position: absolute; top: 15px; right: 19px;}
+#myaccount a {margin-left: 8px; float: left;}
+
+.content {background: url(../images/bg-body.jpg) top left repeat-y;}
+.twocolpage, .onecolpage {padding: 20px 24px; background: url(../images/bg-body-bottom.jpg) bottom left no-repeat;}
+
+
+/* 2 columns static page (narrow left wide right) -  homepage, about us etc
+------------------------------------------------------ */
+.twocolpage h2 {margin: 0 0 15px; font-weight: normal; line-height: 1.5em;} /* left column text */
+.twocolpage p {margin-top: 3px;}
+.twocolpage .leftcol {width: 155px; margin-right: 5px; padding-right: 5px; float: left;}
+.twocolpage .rightcol {width: 545px; padding-left: 8px; border-left: 1px solid #bfe7f4; float: left;}
+.rightcol h3 {margin: 20px 0 2px;}
+
+/* 1 2 3 step block, consist of 2 images - sprite icon (in span tag) and #text (block bg) */
+.stepblock {width: 170px; height: 130px; padding-bottom: 20px; margin-left: 8px; border-right: 1px solid #d2eef7; border-bottom: 1px solid #d2eef7; background: left 70px no-repeat; position: relative; float: left;}
+.stepblock span {width: 98px; height: 90px; display: block; background: url(../images/sprite-icons.png) no-repeat; text-indent: -9999px; position: absolute; top: -40px; z-index: 5;} /* shift up icon to overlap header */
+.step1 {background-image: url(../images/txt-step1.png)}
+.step2 {background-image: url(../images/txt-step2.png)}
+.step3 {background-image: url(../images/txt-step3.png)}
+.step1 span {background-position: 0 0;}
+.step2 span {background-position: 0 -90px;}
+.step3 span {background-position: 0 -180px;}
+
+.maintext, .subtext {margin-left: 10px; float: left; font-size: 12px;}
+.maintext p, .subtext p {height: 35px; overflow: visible;} /* set height so links will sit at same level and reduce space between text and button by setting overflow to show */
+.maintext a, .subtext a {margin-right: 5px; display: block; text-align: right; position: relative; bottom: -28px;} /* shift the buttons down to line up with the contact info */
+.maintext {width: 350px; clear: left;}
+.subtext {width: 170px;}
+
+.contact {padding-bottom: 10px; clear: left;}
+.contact span {font-weight: bold;}
+.contact a {color: #fff;}
+/* end 2 columns page */
+
+
+/* 1 column page  - faq, terms, privacy, sign up, request pass, forms etc
+------------------------------------------------------ */
+.onecolpage {padding-bottom: 30px;}
+.onecolpage h3 {margin-bottom: 0; font-size: 12px;}
+
+.learnmore div {width: 80%; margin-bottom: 25px;}
+.screenshot {margin: 3px 0;}
+.screenshot img {border: 1px solid #ccc;}
+
+.faq {}
+.faq h4 {margin: 5px 20px 0; font-size: 11px; text-transform: uppercase;}
+.faq p {margin-left: 20px;}
+.faq ul {margin: 0 20px 10px; padding: 0; list-style: none;}
+.faq .questions {margin: 5px 0 20px 25px; padding: 0; font-size: 12px;}
+.faq .toplink {margin: 5px 5px 15px; border-top: 1px solid #eee; display: block; text-align: right;}
+
+
+/* end 1 column page */
+
+
+
+/* ------------------------------------------------------
+   appcontainer styles - print, configure, user, history, my account etc
+------------------------------------------------------ */
+#appcontainer {width: 848px; margin: 30px auto 0;}
+#appheader, #appfooter {width: 840px; padding: 0 4px;}
+
+#appheader {height: 59px; background: url(../images/bg-app-header.jpg) top left no-repeat; position: relative;}
+#appheader .logo {margin: 0; padding: 13px 0 0 21px;}
+#appheader .logo a {width: 136px; height: 40px; display: block; background: url(../images/logo-scryptic-sm.jpg) top left no-repeat; text-indent: -9999px; outline: none;}
+
+.appcontent {background: url(../images/bg-app-body.jpg) top left repeat-y; clear: both;}
+#appcontainer .twocolpage, #appcontainer .onecolpage {background-image: url(../images/bg-app-body-bottom.jpg);}
+
+/* 2 cols page used for print and configure */
+#appcontainer .twocolpage {}
+#appcontainer .leftcol {width: 500px; margin: 0; padding: 0;}
+#appcontainer .rightcol {width: 266px; margin: 0; padding: 1px 10px 0 20px;}
+#appcontainer .leftcol h2 {color: #00abe1; font-size: 14px;}
+#appcontainer .rightcol h2 {color: #999; font-size: 14px;}
+
+#upload-doc, #watermarks, #layout-position, .upload-wm, #font-options {margin: 0 20px 20px 0; padding: 15px 10px; border: 1px solid #e1e1e1; background: #fff;}
+
+
+/* print page
+------------------------------------------------------ */
+/* upload file table */
+#file_list table {width: 100%;}
+#file_list th {font-size: 9px;}
+#file_list td {padding: 5px 2px; border-bottom: 1px dotted #d7d7d7;}
+#file_list .buttonCol {width: 52px;}
+#file_list .hover td {background-color: #d1f1f6;}
+
+/* watermark groups table */
+.watermark-groups {width: 100%; margin-top: 10px;}
+.watermark-groups label { font-size: 10px; color: #787878;}
+.watermark-groups .form_error {margin-left: 0;}
+
+.watermark-groups td {padding: 2px;}
+.watermark-groups td.grp-checkbox{width: 5%;}
+.watermark-groups td.grp-name {width: 72%; font-weight: bold;}
+.watermark-groups td.grp-edit {width: 8%;}
+.watermark-groups td.grp-delete {width: 15%;}
+.watermark-groups td.grp-members-info {padding-bottom: 5px; border-bottom: 1px dotted #d7d7d7;}
+.watermark-groups td.grp-members-info a {margin: 0 4px;}
+.grp-members-info .grp-members-list {margin-top: 5px; padding: 4px; border: 1px solid #eee;}
+.grp-members-info .grp-members-list div {margin: 2px;}
+
+.grp-name span {cursor: pointer;}
+.watermark-groups .grp-item-label {font-size: 11px; color: #000;} /* reset font style for label for checkboxes */
+
+/* print config page 
+------------------------------------------------------ */
+#layout-position, .upload-wm, #font-options {}
+
+/* layout position */
+.layout-img {width: 158px;}
+.layout-img input, .layout-img label {float: left; margin: 5px 5px 0 0;}
+
+#picker-color{width: 210px; height: 245px; margin-top: -265px; padding: 0; position:absolute; z-index: 200;} /* color picker container */
+#picker {margin:5px 0 0 5px; padding:0; position:absolute; z-index:201;} /* color wheel */
+#color-close{width:60px; height:19px; margin:206px 0 0 135px; padding:0; position:absolute; display:block; z-index:202; cursor:pointer;}
+.colorpicker {width: 20px; height: 20px; margin-top: 1px; border: #666 solid 1px;} /* square that holds whatever color user selects */
+
+/* upload watermark */
+.upload-wm .thumbnail {float: left; width: 94px; height: 104px; padding: 10px;}
+.upload-wm .thumbimg {width: 64px; height: 64px; padding: 1px; display: table-cell; vertical-align: middle; text-align: center; overflow: hidden;}
+.upload-wm .thumbnail p {margin-top: 3px;}
+.upload-wm .thumbnail input {margin-bottom: 3px; vertical-align: top;}
+.upload-wm .thumbnail .button-delete {float: left; cursor: pointer;}
+
+
+/* preview */
+.img-preview {width: 266px; height: 346px; margin-bottom: 5px; background: #f7f9fd; border: 2px solid #6fd6f2; text-align: center; position: relative;}
+.img-preview img {} /* css styles is set by js */
+
+
+/* users page
+------------------------------------------------------ */
+#addUserForm {margin-bottom: 20px; border-bottom: 2px solid #000;}
+
+
+/* print history/report
+------------------------------------------------------ */
+.report {width: 100%; margin-bottom: 30px; background: #fff;}
+.report th, .report td {padding: 4px;}
+.report th {border-bottom: 1px solid #ccc;}
+.report .actionCol {width: 6%;}
+.report .dateCol {width: 15%;}
+.report .userCol {width: 15%;}
+.report .pagesCol {width: 6%;}
+.report .timeCol {width: 6%;}
+.report .fileCol {width: 22%;}
+.report .wmCol {width: 35%;}
+.report .editCol {width: 5%;}
+.report .deleteCol {width: 8%;}
+.report .altrow-bg td {background-color: #e8e8e8;}
+.report .pagenav td {border-top: 1px solid #ccc;}
+
+/* print details */
+.fieldvalue-row {height: 24px; clear: left;}
+.fieldvalue-row label {width: 150px; margin-right: 10px; text-align: right; float: left;}
+.fieldvalue-row span {font-weight: bold; float: left;}
+
+
+
+
+/* ------------------------------------------------------
+   others
+------------------------------------------------------ */
+#footer {clear: left;}
+#footer p {margin: 0; padding: 5px 10px; font-size: 10px; color: #666;}
+#footer a {color: #666;}
+
+/* navigation */
+#trial-upgrade {height: 30px; margin: -5px 6px 0 0; padding-right: 10px; background: url(../images/notification-right.png) top right no-repeat; position: relative; float: right;}
+#trial-upgrade p {height: 22px; margin: 0; padding: 8px 92px 0 10px; background: url(../images/notification-left.png) top left no-repeat; color: #00445b;} /* extra padding right space for button */
+
+.nav {height: 21px; padding: 8px 4px; background: url(../images/bg-app-body.jpg) top left repeat-y;}
+.nav ul {margin: 0 16px; padding: 0; list-style: none;}
+.nav li {margin-right: 6px; float: left;}
+.nav li a {width: 91px; height: 21px; background: url(../images/sprite-nav.png) no-repeat; display: block;}
+li.nav-print a {background-position: 0 -21px;} /* set up sprite position */
+li.nav-config a {background-position: -91px -21px;}
+li.nav-users a {background-position: -182px -21px;}
+li.nav-history a {background-position: -273px -21px;}
+li.nav-print a:hover, li.nav-print a.current {background-position: 0 0;}
+li.nav-config a:hover, li.nav-config a.current {background-position: -91px 0;}
+li.nav-users a:hover, li.nav-users a.current {background-position: -182px 0;}
+li.nav-history a:hover, li.nav-history a.current {background-position: -273px 0;}
+.nav a span {display: none;} /* hide text in nav */
+
+/* pagination */
+.pagination {height: 18px; padding-top: 4px; position: relative; background: #fff; text-align: center;}
+.pagination .prevlink, .pagination .nextlink {position: absolute; top: 4px;}
+.pagination .prevlink {left: 5px;}
+.pagination .nextlink {right: 5px;}
+.pagination .pagenum {font-weight: bold;}
+.report .pagination {border-top: 1px solid #ccc;}
+
+
+/* form layout 
+------------------------------------------------------ */
+.form_error {margin-left: 160px; color: #c00;}
+.form-input {height: 40px; clear: left;}
+.form-input label {width: 150px; margin-right: 10px; padding-top: 3px; text-align: right; float: left;}
+.form-input input {float: left;}
+.form-submit {margin: 20px 20px 10px 160px; clear: left;}
+.narrow {width: 132px;}
+
+.infotext {margin-left: 5px; font-style: italic; color: #666;}
+.robot-input {position: absolute; visibility: hidden;} /* hide the input - for register page */
+
+#create_group .form_error, #font-options {margin-left: 0;}
+#appcontainer .form-submit {margin-top: 5px; position: relative;}
+#preview-container .form-submit {margin: 12px 0 0 0;} 
+/* end form layout */
+
+
+/* button sprite
+------------------------------------------------------ */
+.basebtn {width: 86px; height: 25px; background: url(../images/sprite-buttons.png) no-repeat; display: block; cursor: pointer;}
+.basebtn span {display: none;}
+.basebtn:active {}
+input.basebtn {border: none; /* hide text in IE */ font-size: 0; line-height: 0; text-indent: -9999px;} /* set image background on form input/submit buttons and hide the text on button */ 
+.btn-learnmore {width: 107px; margin-left: auto; background-position: 0 0;}
+.btn-signup {margin-left: auto; background-position: 0 -25px;}
+.btn-signin {background-position: 0 -50px;}
+.btn-submit {background-position: 0 -75px;}
+.btn-create {background-position: 0 -100px;}
+.btn-save {background-position: 0 -125px;}
+.btn-cancel {background-position: 0 -150px;}
+.btn-preview {background-position: 0 -175px;}
+.btn-print {background-position: 0 -200px;}
+.btn-myacct {width: 107px; background-position: 0 -225px;}
+.btn-logout {background-position: 0 -250px;}
+.btn-upgrade {background-position: 0 -275px;}
+.btn-myacct-sm {height: 21px; background-position: 0 -300px;}
+.btn-logout-sm {height: 21px; background-position: 0 -321px;}
+.btn-upgrade-sm {height: 21px; background-position: 0 -342px;}
+.btn-viewmembers-sm {height: 21px; background-position: 0 -363px; margin-top: -32px; float: right;}
+
+.login .btn-signin {margin-left: auto;}
+.form-submit .btn-cancel {position: absolute; top: 0; left: 95px}
+#trial-upgrade .btn-upgrade-sm {position: absolute; top: 6px; right: 9px;}
+
+/* icon sprite */
+a.toggleShow b, .button-delete, .num1, .num2, .num3, .ico-print, .ico-pdf {background: url(../images/sprite-icons.png) no-repeat;}
+
+a.toggleShow {text-decoration: none; color: #000; cursor: pointer;}
+a.toggleShow b {width: 8px; height: 8px; margin: 2px 3px 0 0; background-position: 0 -274px; display: block; float: left;}
+a.toggleShow b.show {background-position: -8px -274px;}
+
+.button-delete {padding-left: 13px; display: block; background-position: -16px -272px;} /* garbage can icon */
+.num1 {padding-left: 22px; background-position: 0 -284px;}
+.num2 {padding-left: 22px; background-position: 0 -305px;}
+.num3 {padding-left: 22px; background-position: 0 -326px;}
+
+.ico-print, .ico-pdf {height: 14px; margin-right: 8px; display: block; float: left;} /* icons on print history */
+.ico-print span, .ico-pdf span {display: none;}
+.ico-print {width: 11px; background-position: -13px -346px;}
+.ico-pdf {width: 12px; background-position: 0 -346px;}
+
+/* non sprite */
+#upload_indicator img {margin: 0 2px; vertical-align: middle;}
+
+/* end sprite / buttons */
+
+
+/* misc 
+------------------------------------------------------ */
+.hideiframe {text-indent: -9999px; clear: both;}
+
+/* css clearing fix */
+/* slightly enhanced, universal clearfix hack */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+
+
+/* Slider
+----------------------------------*/
+.ui-widget { font-family: Verdana,Arial,sans-serif/*{ffDefault}*/; font-size: 1.1em/*{fsDefault}*/; }
+.ui-widget-content { width: 440px; border-top: 1px solid #bebebe/*{borderColorContent}*/; border-left: 1px solid #bdbdbd; border-right: 1px solid #fdfdfd; border-bottom: 1px solid #fdfdfd; background: #ebeeee/*{bgColorContent} url(images/ui-bg_glass_75_ffffff_1x400.png)*//*{bgImgUrlContent}*/ 0/*{bgContentXPos}*/ 0/*{bgContentYPos}*/ repeat-x/*{bgContentRepeat}*/; color: #222222/*{fcContent}*/; }
+.ui-widget-header { height:1em; border: 1px solid #aaaaaa/*{borderColorHeader}*/; background: #cccccc; /*{bgColorHeader}*/ /*url(images/ui-bg_highlight-soft_75_cccccc_1x100.png){bgImgUrlHeader}*/ /*0{bgHeaderXPos}*/ /*50%{bgHeaderYPos} repeat-x*//*{bgHeaderRepeat};*/ color: #222222/*{fcHeader}*/; font-weight: bold; }
+.ui-state-default, .ui-widget-content .ui-state-default { /*border: 1px solid #838383{borderColorDefault};*/ background: /*#e6e6e6*//*{bgColorDefault}*/ url(../images/silde-handle.gif)/*{bgImgUrlDefault}*/ /*0{bgDefaultXPos}*/ /*50%{bgDefaultYPos}*/ no-repeat/*{bgDefaultRepeat}*/; font-weight: normal/*{fwDefault}*/; color: #555555/*{fcDefault}*/; outline: none; }
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #555555/*{fcDefault}*/; text-decoration: none; outline: none; }
+/*.ui-corner-all { -moz-border-radius: 4px{cornerRadius}*//*; -webkit-border-radius: 4px{cornerRadius}; }*/
+.ui-slider { position: relative; text-align: left; }
+.ui-slider .ui-slider-handle { position: absolute; z-index: 2; width: 0.8em; height: 2em; cursor:pointer; }
+.ui-slider .ui-slider-range { position: absolute; z-index: 1; font-size: .7em; display: block; border: 0; }
+
+.ui-slider-horizontal { height: .5em; }
+.ui-slider-horizontal .ui-slider-handle { top: -.8em; margin-left: -.6em; }
+.ui-slider-horizontal .ui-slider-range { top: 0; height: 100%; }
+.ui-slider-horizontal .ui-slider-range-min { left: 0; }
+.ui-slider-horizontal .ui-slider-range-max { right: 0; }
+
+/* additional style for the slider */
+.img-opacity-field {margin-top: 10px; font-size: 9px; color: #666;}
+.img-opacity-field input {border: none; background: none; font-size: 9px; color: #666;}
+.slider-container {margin: 5px 0;}

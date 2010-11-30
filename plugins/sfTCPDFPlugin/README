@@ -1,0 +1,103 @@
+= sfTCPDFPlugin =
+
+`sfTCPDFPlugin` class provides abstraction for the [http://www.tecnick.com/public/code/cp_dpage.php?aiocp_dp=tcpdf TCPDF library].
+The main interest of this FPDF extension resides in the fact that it handles any UTF8 strings.
+
+== Installation ==
+
+  * Install the plugin
+
+  {{{
+    symfony plugin-install http://plugins.symfony-project.com/sfTCPDFPlugin
+  }}}
+
+  or download it and unzip in your /plugins directory
+
+  * Download the [http://sourceforge.net/project/showfiles.php?group_id=128076 TCPDF library]
+
+  * Unzip it inside the '''/plugins/sfTCPDFplugin/lib''' folder
+
+At this point, you should have a '''tcpdf''' folder in '''/plugins/sfTCPDFPlugin/lib'''
+
+  * Copy the files in '''/web/sfTCPDFPlugin''' directly to your application '''/web''' directory
+
+  * Clear you cache
+
+  {{{
+    symfony cc
+  }}}
+
+== Configuration ==
+
+  * Set '''sf_tcpdf_dir''' in your '''config.php''' application if TCPDF library is not inside the '''/plugins/sfTCPDFplugin/lib''' folder (check '''/plugins/sfTCPDFPlugin/config/config.php''')
+
+  * If you want to have custom settings for each generated PDF check '''/plugins/sfTCPDFPlugin/config/config.php''' and '''tcpdf/config/tcpdf_config.php''').
+
+  * If you want to run the tests, enable the '''sfTCPDF''' module in your '''settings.yml''' file, then call '''sfTCPDF/test''' or '''sfTCPDF/test2'''
+
+== Usage ==
+
+  * 1 - Hello World test (sfTCPDF/test)
+
+  {{{
+  /**
+   * Hello world test
+   */
+  public function executeTest()
+  {
+    // pdf object
+    $pdf = new sfTCPDF();
+
+    // settings
+    $pdf->SetFont("FreeSerif", "", 12);
+    $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+    $pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+    $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
+    $pdf->setFooterFont(array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+    $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
+    $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+
+    // init pdf doc
+    $pdf->AliasNbPages();
+    $pdf->AddPage();
+    $pdf->Cell(80, 10, "Hello World !!! & é € U û いろは");
+
+    // output
+    $pdf->Output();
+    return sfView::NONE;
+  }
+  }}}
+
+  * 2 - Full test (sfTCPDF/test2, check '''/plugins/sfTCPDFPlugin/actions/actions.php''')
+
+== Changelog ==
+
+=== 1.5.3 ===
+
+  * Initial version for TCPDF 1.53 TC030
+
+=== 2007-06-04 | 1.5.4 Stable ===
+
+  * Fix Full test (sfTCPDF/test2)
+  * Customize Plugin is now possible
+
+=== 2008-01-21 | 1.5.5 Stable ===
+  * Change the constant FPDF_FONTPATH to K_PATH_FONTS for work with the last version of TCPDF (Garfield-fr)
+  
+== Demo ==
+
+  * You can find the [http://snippets.coilblog.com/sfTCPDF/test hello world] and the [http://snippets.coilblog.com/sfTCPDF/test2 full test] on my blog.
+
+== Notes ==
+
+  * I seems there are problems with the TCPDF class when using PHP 5.1.x
+  * I am searching beta testers to get some feeback. (C0il on IRC on, comment on my blog or whatever you want !)
+
+=== TODO ===
+
+=== Plugin support ===
+
+  * Please report bugs/feeback in the [http://www.symfony-project.com/forum/index.php/f/12/ plugin section] of the forum
+  * You can find also contact me on IRC or by email (check README file)
+
+COil :)

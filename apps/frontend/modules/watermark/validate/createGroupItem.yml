@@ -1,0 +1,13 @@
+fields:
+        
+  wm_group_item_value:
+    required: true
+      msg: The member name field cannot be left blank
+    sfStringValidator:
+      max:       128
+      max_error: The member name should be less than 128 characters
+  wm_group_item_alt_value:
+    sfStringValidator:
+      max:       128
+      max_error: The alternate value should be less than 128 characters
+      

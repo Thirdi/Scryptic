@@ -1,0 +1,13 @@
+fields:
+        
+  value:
+    required: true
+      msg: The group name field cannot be left blank
+    sfStringValidator:
+      max:       128
+      max_error: The member name should be less than 128 characters
+  alt_value:
+    sfStringValidator:
+      max:       128
+      max_error: The alternate value should be less than 128 characters
+      

@@ -1,0 +1,52 @@
+all:
+  site_environment:          DEVELOPMENT
+
+  override_email:            '##OVERRIDE_EMAIL##'
+
+  admin_email:    support@website.com
+  admin_name:     Scryptic Support
+
+  user_validation:
+    first_name:
+      required: true
+      required_msg: The first name field cannot be left blank
+      max:       64
+      max_error: The first name field should be less than 64 characters
+
+    last_name:
+      required: true
+      required_msg: The last name field cannot be left blank
+      max:       64
+      max_error: The last name field should be less than 64 characters
+
+    email:
+      required: true
+      required_msg: The email address field cannot be left blank
+      email_error:  This email address is invalid
+      unique_email_error: The email address is already taken
+      max:       128
+      max_error: The email address field should be less than 128 characters
+
+    password:
+      required: true
+      required_msg: The password field cannot be left blank
+      min:          4
+      min_error:    The minimum password length is 4
+
+    password_confirm:
+      required: true
+      required_msg: The repeat password field cannot be left blank
+      check:    password
+      compare_error: The two passwords do not match
+
+    validate:
+      robot_error: The validate field should not contain a value
+
+  sfImageTransformPlugin:
+    default_adapter: ImageMagick # GD or ImageMagick
+    default_image: { mime_type: image/png, filename: Untitled.png }
+    font_dir: ##FONT_DIR##
+    mime_type:
+      auto_detect: false
+      library: Fileinfo # Fileinfo (PECL), MIME_Type (PEAR), gd_mime_type (GD)
+

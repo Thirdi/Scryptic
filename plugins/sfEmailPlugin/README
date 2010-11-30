@@ -1,0 +1,45 @@
+= sfEmail plugin =
+
+The `sfEmailPlugin` is a symfony plugin that allows to debug emails deliverability in development mode. All the emails are stored as the plain text 
+files into /log/mail/ folder (by default). And you will be able to browse/view them via sfEmail module.
+This could be really helpfull for the cases when you are testing confirmation link integrated in emails, user registration information and don't have
+a way to use real deliverability.
+
+== Installation ==
+
+  * Install the plugin
+  
+  {{{
+    symfony plugin-install http://plugins.symfony-project.com/sfEmailPlugin
+  }}}
+  
+  * Enable module in your `settings.yml` (optional)
+    * sfEmail
+
+  {{{
+    all:
+      .settings:
+        enabled_modules:      [ default, sfEmail ]
+  }}}
+
+  * Make sure plugin will be able to create a folder mail in log directory or create it by yourself with 777 permissions.
+
+  * Clear you cache
+  
+  {{{
+    symfony cc
+  }}}
+
+=== Using ===
+
+  * In order to use this plugin just use sfEmail as a class for sending emails instead of sfMail ( $mail = new sfEmail() )
+
+  * Access the emails management module with the default route:
+ 
+  {{{
+    http://www.example.com/backend.php/sfEmail
+  }}}
+
+  * You're done.
+
+== TODO ==

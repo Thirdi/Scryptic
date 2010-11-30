@@ -1,0 +1,8 @@
+fields:
+    	  
+  wm_group_name:
+    required: true
+      msg: The group name field cannot be left blank
+    sfStringValidator:
+      max:       64
+      max_error: The group name should be less than 64 characters

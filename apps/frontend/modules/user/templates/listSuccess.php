@@ -1,0 +1,1 @@
+<?php include_partial('user/list', array('users'=>$users)) ?>

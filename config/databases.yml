@@ -1,0 +1,7 @@
+all:
+  propel:
+    class:          sfPropelDatabase
+    param:
+      phptype:      mysql
+      dsn:          mysql://scryptic:scryptic@localhost/scryptic
+      encoding:     utf8

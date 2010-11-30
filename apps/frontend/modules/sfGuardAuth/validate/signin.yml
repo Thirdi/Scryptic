@@ -1,0 +1,33 @@
+fillin:
+  enabled: true
+  param:
+    name: signin
+
+methods:
+  post: [si_username, si_password, username, password]
+
+# username + password are specified to override the fields for this
+# file in the plugin's directory, since we added the si_ prefix
+
+names:
+  si_username:
+    required:         true
+    required_msg:     Your email is required
+    validators:       [userValidator]
+
+  si_password:
+    required:         true
+    required_msg:     Your password is required
+
+  username:
+    required: false
+
+  password:
+    required: false
+
+userValidator:
+    class:            sfGuardUserValidator
+    param:
+      password_field: si_password
+      remember_field: si_remember
+      username_error: Email or password is not valid.

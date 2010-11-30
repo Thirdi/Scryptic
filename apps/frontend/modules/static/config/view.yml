@@ -1,0 +1,26 @@
+default:
+  layout:        home_layout
+learnMoreSuccess:
+  metas:
+    title:       About Scryptic - Online PDF Watermarking Web Based Software
+    description: Secure your scripts, whitepapers and documents online quickly and easily with UseScryptic.com!
+    keywords:    watermark, pdf, print pdf, add watermark pdf, add watermark to pdf, digital watermark, watermark pdf, about scryptic
+aboutSuccess:
+  metas:
+    title:       About Scryptic - Online PDF Watermarking Software
+    description: Scryptic, the innovative online PDF watermarking software
+    keywords:    about scrypric, watermark, pdf, print pdf, add watermark pdf, add watermark to pdf, digital watermark, watermark pdf
+faqSuccess:
+  metas:
+    title:       Use Scryptic - Frequently Asked Questions About Scryptic
+    description: Frequently asked questions about Use Scryptic's PDF online watermarking software.  With Scryptic, embedding a watermark is as easy as 1-2-3!
+    keywords:    watermark, pdf, print pdf, add watermark pdf, add watermark to pdf, digital watermark, watermark pdf, faq, frequently asked questions
+privacySuccess:
+  metas:
+    title:       Privacy Policy
+    robots:      noindex
+termsSuccess:
+  metas:
+    title:       Terms of Service
+    robots:      noindex
+

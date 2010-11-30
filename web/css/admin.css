@@ -1,0 +1,34 @@
+/* reset */
+body, form {margin: 0; padding: 0;}
+img, fieldset {border: 0;}
+
+/* default */
+body {font-family: Arial, Helvetica, sans-serif; font-size: 100%; color: #333;}
+a, a:visited {color: #666;}
+a:hover {color: #3da9ce;}
+input {font-size: 100%;}
+
+.container {width: 960px; margin: 0 auto;}
+
+h1 {margin: 0; padding: 30px 20px 10px; background: #333; font-size: 1.5em; color: #6fd6f2;}
+h2 {font-size: 1.2em; text-transform: uppercase;}
+
+.nav {margin: 0; padding: 0; list-style: none;}
+.nav li {float: left; padding: 4px 12px; border: 1px solid #ccc; font-size: 0.85em;}
+.nav li.logout {float: right;}
+
+
+.content {clear: both; padding: 40px 20px; border: 1px solid #ccc; border-top: 0;}
+
+table {width: 100%; margin-bottom: 1em; border: 0; border-collapse: collapse;}
+th, td {padding: 4px; text-align: left; font-size: 0.85em;}
+.datatable {}
+.datatable th {background: #eee; border: 1px solid #fff;}
+.datatable td {border-bottom: 1px solid #eee;}
+
+/* form elem */
+.form-row {clear: left; margin-bottom: 0.5em;}
+.form-row label {width: 150px; display: block; float: left;}
+
+.formtable {}
+.formtable th {width: 20%;}

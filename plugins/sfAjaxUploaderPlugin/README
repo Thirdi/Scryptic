@@ -1,0 +1,63 @@
+= sfAjaxUploaderPlugin - uploading files in ajax requests =
+
+== Author ==
+
+Alon Noy, [http://www.frames4technology.nl/]
+
+== Overview ==
+
+The plugin enables file uploads for ajax based requests.
+
+== License ==
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+== Compatibility ==
+
+Was tested against Symfony version 1.0.7 - 1.0.8
+
+== Change log ==
+v0.2.0:     Some styling.
+
+v0.1.0:     First beta release.
+
+== Installation ==
+
+To install the plugin use:
+{{{
+symfony plugin-install http://plugins.symfony-project.com/sfAjaxUploaderPlugin
+}}}
+
+== Settings ==
+
+enable module: ajaxUploader
+
+include helper: AjaxUploader
+
+create filter using class: AjaxUploaderFilter
+
+include js: /sfAjaxUploaderPlugin/js/ajaxUploader
+
+== Using the plugin ==
+
+Use helper '''input_ajaxsafe_file_tag''' in place of input_file_tag.
+Make call to '''myAjaxUploader()''' BEFORE the AJAX request.
+When the request is done you will have the filepath of the loaded file in your request parameters. The file is already moved to your upload area.
+
+Example using '''form_remote_tag''' with the AJAX uploader:
+
+{{{
+<?php 
+  // the form
+  echo form_remote_tag(array(
+    'before'   => 'myAjaxUploader()',
+    'update'   => 'item_list',
+    'url'      => 'item/add',
+  ));
+  // the file input field
+  echo input_ajaxsafe_file_tag('name');
+?>
+}}}
+
+In the action the request parameter '''name''' will be populated with the filepath to the uploaded file.

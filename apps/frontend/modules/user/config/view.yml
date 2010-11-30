@@ -1,0 +1,25 @@
+indexSuccess:  
+ layout: layout
+
+updateSuccess:
+ layout: layout
+
+editSuccess:
+ layout: layout
+
+addSuccess:
+ layout: layout
+
+myAccountSuccess:
+ layout: layout
+
+forcePasswordChangeSuccess:
+ layout: no_nav_layout
+
+signupSuccess:
+ metas:
+  title: Register with Scryptic
+  robots: noindex
+
+all:
+ layout: signup_layout

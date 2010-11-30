@@ -1,0 +1,14 @@
+all:
+  sf_guard_plugin:
+    success_signin_url:      @printpage
+    success_signout_url:     @homepage         # the plugin use the referer as default
+
+  watermarker_factory:
+    watermarker_class:       JavaBridgedWatermarker
+
+  pager_limit:
+    print_report:            10
+    uploaded_documents:      5
+
+  java_php_bridge:
+    connection_endpoint:     127.0.0.1:8181

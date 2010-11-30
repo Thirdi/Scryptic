@@ -1,0 +1,20 @@
+fillin:
+  enabled: true
+  param:
+    name: edit
+
+validators:
+  passwordValidator:
+    class:          sfStringValidator
+    param:
+      min:          4
+      min_error:    The minimum password length is 4
+
+fields:
+  font_id:
+    required: true
+      msg: Please select a font
+
+  size:
+    required: true
+      msg: Please select font size

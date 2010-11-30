@@ -1,0 +1,31 @@
+# default rules
+homepage:
+  url:   /
+  param: { module: home, action: index }
+
+sf_guard_password:
+  url:   /request-password
+  param: { module: sfGuardAuth, action: requestPassword }
+
+sf_guard_password_sent:
+  url:   /password-sent
+  param: { module: sfGuardAuth, action: passwordSent }
+
+signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+  
+signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+
+default_symfony:
+  url:   /symfony/:action/*
+  param: { module: default }
+
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*
